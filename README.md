@@ -49,6 +49,14 @@ DB.load('static/videotest_4k.mp4', (err, obj) => {
 
     if (obj) {
         let blob = URL.createObjectURL(obj.blob);
+
+        // Use blob in your component 
+
+        // ex react : 
+        // <video src={blob} /> 
+
+        // ex vanilla js :
+        // document.getElementById('yourVideo').src = blob;
     }
 });
 ```
