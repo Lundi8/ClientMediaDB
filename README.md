@@ -39,6 +39,7 @@ Can be used every where in your code.
 ```
 DB.load('static/videotest_4k.mp4', (err, obj) => {
     if(err) throw err;
+
     /**
     * obj -> { src, name, ext, blob }
     * src -> filePath // ex : static/videotest_4k.mp4
@@ -84,13 +85,6 @@ const Page = () => {
 
         // Load a media
         DB.load('static/videotest_4k.mp4', (err, obj) => {
-          /**
-           * obj = {src, name, ext, blob}
-           * src = filePath // ex : static/videotest_4k.mp4
-           * name = fileName // ex : videotest_4k.mp4
-           * ext = fileExtension // ex : mp4
-           * blob = Blob object
-           */
           if (obj) {
             let blob = URL.createObjectURL(obj.blob);
             setMedia(blob);
