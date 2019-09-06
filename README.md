@@ -6,14 +6,14 @@ Simple api made with IndexedDB to download all needed files from server to clien
 
 ## API
 
-###### Call the API:
+#### Call the API:
 
 ```
 import clientMediaDB from './clientMediaDB';
 const DB = clientMediaDB();
 ```
 
-###### Save all needed file from server :
+#### Save all needed file from server :
 
 Call it in your first loaded file.
 
@@ -28,7 +28,7 @@ DB.saveAll(['static/videotest.mp4', 'static/videotest_4k.mp4'], (err, res) => {
 });
 ```
 
-###### Load needed file from clientMediaDB :
+#### Load needed file from clientMediaDB :
 
 Can be used every where in your code.
 
