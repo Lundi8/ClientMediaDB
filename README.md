@@ -6,20 +6,20 @@ Simple api made with IndexedDB to download all needed files from server to clien
 
 ## API
 
-#### Call the API:
+### Call the API:
 
 ```
 import clientMediaDB from './clientMediaDB';
 const DB = clientMediaDB();
 ```
 
-#### Save all needed file from server :
+### Save all needed file from server :
 
 Call it in your first loaded file.
 
-- function : saveAll(args, callback)
+- saveAll(args, callback)
 - args : array of filepath
-- callback : return error as first argument and response that all files are downloaded as second
+- callback : error and string
 
 ```
 DB.saveAll(['static/videotest.mp4', 'static/videotest_4k.mp4'], (err, res) => {
@@ -28,13 +28,13 @@ DB.saveAll(['static/videotest.mp4', 'static/videotest_4k.mp4'], (err, res) => {
 });
 ```
 
-#### Load needed file from clientMediaDB :
+### Load needed file from clientMediaDB :
 
 Can be used every where in your code.
 
-- function : load(args, callback)
+- load(args, callback)
 - args : string of filepath
-- callback : return error as first object as second
+- callback : error and object
 
 ```
 DB.load('static/videotest_4k.mp4', (err, obj) => {
@@ -51,17 +51,17 @@ DB.load('static/videotest_4k.mp4', (err, obj) => {
     if (obj) {
         let blob = URL.createObjectURL(obj.blob);
 
-        // Use blob in your component 
+        // Use blob in your component
 
-        // ex react : 
-        // <video src={blob} /> 
+        // ex react :
+        // <video src={blob} />
 
         // ex vanilla js :
         // document.getElementById('yourVideo').src = blob;
     }
 });
 ```
-
+    
 ## Exemple with Nextjs
 
 ```
